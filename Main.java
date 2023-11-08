@@ -5,5 +5,6 @@ class Main
         System.out.println("Hello World!");
         Noahs.sayHiToNoah();
         Rafaels.sayHiToRaf();
+        Teghan.sayHiToTeghan();
     }
 }
