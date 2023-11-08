@@ -1,7 +1,7 @@
-class Main
-{
-    public static void main(String[] args)
-    {
-        System.out.println("Never going to give you up!");
-    }
-}
+def main():
+  name = str(input("What is your name? \n"))
+  print("Hello, " + name)
+
+
+
+main()
