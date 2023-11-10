@@ -1,4 +1,4 @@
-public class Evan
+class Evan
 {
 	public static void main(String[] args){
 	    sayHello();
