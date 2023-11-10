@@ -5,34 +5,38 @@ class Main{
 
     public static void main(String[] args){
 
-        String [] classNames = {"Noahs", "AlexTran", "Emmanueli", "Evan", "EvanRaju", "Fina's", "Nathan", "Noel", "Rafaels", "Teghan"};
+        // Variables
+        String [] classNames = {"Noahs", "AlexTran", "Emmanueli", "Evan", "Fina's", "Nathan", "Noel", "Rafaels", "Teghan"};
         Method[] classMethods;
         ArrayList<Method> allMethods = new ArrayList<>();
+
+        System.out.println("Printing all classes and data...\n");
 
         for(String name : classNames){
 
             try{
 
+                // Get all the methods of the class
                 classMethods = Class.forName(name).getDeclaredMethods();
+
+                // Add each method of the class to allMethods
                 for(Method method : classMethods)
                     allMethods.add(method);
-            }catch(ClassNotFoundException e){
+
+                // Print header
+                System.out.println("\nClass: " + name + ".java"
+                                    + "\n----Methods----");
                 
-                e.printStackTrace();
+                // Print all methods
+                for(int i = 0; i < classMethods.length; i++)
+                    System.out.println((i+1) + ". " + classMethods[i]);
+
+            }catch(ClassNotFoundException e){ 
+                System.out.println("\nCannot find class: " + name + ".java");
             }
 
         }
 
-        for(Method method : allMethods){
-
-            try{
-                method.invoke(method.getClass());
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-            System.out.println();
-        }
-
-        System.out.println("Hello World!");
+        System.out.println("\nEnd of Methods!");
     }
 }
