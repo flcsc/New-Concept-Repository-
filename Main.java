@@ -1,5 +1,4 @@
 import java.lang.reflect.*;
-import java.util.ArrayList;
 
 class Main{
 
@@ -7,36 +6,43 @@ class Main{
 
         // Variables
         String [] classNames = {"Noahs", "AlexTran", "Emmanueli", "Evan", "Fina's", "Nathan", "Noel", "Rafaels", "Teghan"};
-        Method[] classMethods;
-        ArrayList<Method> allMethods = new ArrayList<>();
+        Class<?>[] classes = new Class<?>[classNames.length];
 
-        System.out.println("Printing all classes and data...\n");
-
-        for(String name : classNames){
+        for(int i = 0; i < classes.length; i++){
 
             try{
-
-                // Get all the methods of the class
-                classMethods = Class.forName(name).getDeclaredMethods();
-
-                // Add each method of the class to allMethods
-                for(Method method : classMethods)
-                    allMethods.add(method);
-
-                // Print header
-                System.out.println("\nClass: " + name + ".java"
-                                    + "\n----Methods----");
-                
-                // Print all methods
-                for(int i = 0; i < classMethods.length; i++)
-                    System.out.println((i+1) + ". " + classMethods[i]);
-
-            }catch(ClassNotFoundException e){ 
-                System.out.println("\nCannot find class: " + name + ".java");
+                classes[i] = Class.forName(classNames[i]);
+            }catch(ClassNotFoundException e){
+                System.out.println("Cannot find class: " + classNames[i] + ".java");
+                classes[i] = null;
             }
-
+            
         }
 
-        System.out.println("\nEnd of Methods!");
+        printClassInformation(classes);
+    }
+
+    private static void printClassInformation(Class<?>[] classes){
+
+        Method[] classMethods;
+
+        // Start printing information
+        System.out.println("Printing all classes and data...\n");
+
+        for(Class<?> c : classes){
+            if(c == null) continue;
+
+            // Get all the methods of the class
+            classMethods = c.getDeclaredMethods();
+
+            // Print header
+            System.out.println("\nClass: " + c.getName() + ".java"
+                                + "\n----Methods----");
+            
+            // Print all methods
+            for(int i = 0; i < classMethods.length; i++)
+                System.out.println((i+1) + ". " + classMethods[i]);
+        
+        }    
     }
 }
