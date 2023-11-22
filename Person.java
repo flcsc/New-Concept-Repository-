@@ -16,7 +16,7 @@ class Person {
         String lastName = input.nextLine();
         
         System.out.println(fullName(firstName, lastName));
-
+        
         int a = Integer.parseInt(input.nextLine());
         int b = Integer.parseInt(input.nextLine());
 
