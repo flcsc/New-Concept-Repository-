@@ -2,6 +2,11 @@ import java.lang.reflect.*;
 
 class Main{
 
+    /**
+     * The main method which is THE METHOD which the program calls when it is run.
+     
+     * @param args any additional arguments
+     */
     public static void main(String[] args){
 
         // Variables
@@ -23,6 +28,8 @@ class Main{
             } 
         }
         printClassInformation(classes);
+
+        Noahs.roundScores();
     }
 
     /**
@@ -76,6 +83,7 @@ class Main{
             sorted[i] = sorted[lowestValueIndex];
             sorted[lowestValueIndex] = temp;
         }
+
         return sorted;
     }
 }
