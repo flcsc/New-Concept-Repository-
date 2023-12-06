@@ -3,11 +3,7 @@ public class DataTypes {
     public static void main(String[] args) {
 
         System.out.println("Hello World");
-
-        int a = 1;
-        boolean b = true;
-        float aaa = 3.24f;
-
+        
         // modulus: a % b 
         int[] scores = {90, 88, 93, 79};
         // Index        0   1    2   3

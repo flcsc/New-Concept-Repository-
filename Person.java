@@ -50,14 +50,15 @@ class Person {
         int a = Integer.parseInt(input.nextLine());
         int b = Integer.parseInt(input.nextLine());
 
-        if (a>b)
+        if (a>b) {
             System.out.println(a + " is greater than " + b);
-
-        else if (a==b)
+        } else if (a==b) {
             System.out.println(a + " is " + b);
-
-        else 
+        } else {
             System.out.println(a + " is smaller than " + b);
+        }
+        
+        input.close();
 
     }
 
