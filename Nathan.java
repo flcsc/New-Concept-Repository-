@@ -30,6 +30,6 @@ public class Nathan
 	// toString() method to return attributes of the object
 	public String toString()
 	{
-		return "This is " + name + " who is " + age + " years old, in Grade " + grade + ", and is " + heightInches + " cm tall.";
+		return "This is " + name + " who is " + age + " years old, in Grade " + grade + ", and is " + heightInches + " inches tall.";
 	}
 }
