@@ -40,7 +40,7 @@ public class Gavin {
 
     public String toString() {
 
-        return "Gavin's age: " + age + "\nGavin's height" + heightInCm + "cm";
+        return "Gavin's age: " + age + "\nGavin's height: " + heightInCm + "cm";
 
     }
 
