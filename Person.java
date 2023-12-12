@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * A representation of a Human being. Contains FEILDS
+ * A representation of a Human being. Contains FIELDS
  * and METHODS which mimic aspects and actions of a
  * real person. This includes:
  * 
@@ -13,6 +13,9 @@ import java.util.Scanner;
  */
 class Person {
     
+    private String firstName, lastName;
+    private int age;
+
     /**
      * One implementation of the Person class' <strong>CONSTRUCTOR</strong>.
      *      <br><br>
@@ -31,46 +34,51 @@ class Person {
      * resources you have. This REAL BICYCLE is a real-world example
      * of an INSTANCE/OBJECT of a CLASS.
      */
-    public Person() {
-        breathe();
-        
-        System.out.println(add(1,1)); //(1,1)
-        System.out.println(fullName("Bobby", "Jones"));
-        
-        Scanner input = new Scanner(System.in);
-        
-        System.out.println("What is your first name");
-        String firstName = input.nextLine();
-
-        System.out.println("What is your last name");
-        String lastName = input.nextLine();
-        
-        System.out.println(fullName(firstName, lastName));
-        
-        int a = Integer.parseInt(input.nextLine());
-        int b = Integer.parseInt(input.nextLine());
-
-        if (a>b)
-            System.out.println(a + " is greater than " + b);
-
-        else if (a==b)
-            System.out.println(a + " is " + b);
-
-        else 
-            System.out.println(a + " is smaller than " + b);
-
+    public Person(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
 
-    public static void breathe() {
-        System.out.println("I am breathing");
+    //getters
+    public String getFirstName() {
+        return firstName;
     }
 
-    public static int add(int a, int b) {
-        return a + b;
+    public String getLastName() {
+        return lastName;
     }
 
-    public static String fullName(String firstName, String lastName) {
-        return "My name is " + firstName + " " + lastName;
+    public int getAge() {
+        return age;
+    }
+
+    //setters
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    /**
+     * This method will do two things 
+     * <ol>
+     *  <li>Increment the person's age by 1</li>
+     *  <li>Print a message congratulating the person with their new age</li>
+     * </ol>
+     */
+    public void celebrateBirthday() {
+        System.out.println("Happy Birthday! You are " + (++this.age) + " year(s) old!");
+    }
+
+    public String toString() {
+        return "Full Name: " + getFirstName() + " " + getLastName() + "\n Age: " + getAge() + " years old";
     }
 
 }

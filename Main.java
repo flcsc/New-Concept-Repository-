@@ -7,24 +7,36 @@ class Main{
      
      * @param args any additional arguments
      */
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
+        Bicycle bike = new Bicycle(2, "Blue");
+        System.out.println(bike.toString());                        // This SPECIFIC method also lets you do System.out.println(bike);
 
-        // Variables
-        String [] classNames = {"Noahs", "AlexTran", "Emmanueli", "Evan", "Fina's", "Nathan", "Noel", "Rafaels", "Teghan"};
-        Class<?>[] classes = new Class<?>[classNames.length];
+        // // Get print existing class information
+        // String [] classNames = {"Noahs", "AlexTran", "Emmanueli", "Evan", "Fina's", "Nathan", "Noel", "Rafaels", "Teghan"};
+        // Class<?>[] classes = getClasses(classNames);
+        // printClassInformation(classes);
+    }
 
+    private static Class<?>[] getClasses(String[] classNames)
+    {
         classNames = sortAlphabetically(classNames);
+        var classes = new Class<?>[classNames.length];
 
         // Add all existing classes to classes variable from classNames
         for(int i = 0; i < classes.length; i++){
+
             try{
+
                 classes[i] = Class.forName(classNames[i]);
             }catch(ClassNotFoundException e){
+
                 System.out.println("Cannot find class: " + classNames[i] + ".java");
                 classes[i] = null;
             } 
         }
         printClassInformation(classes);
+
         Noahs.roundScores();
     }
 
