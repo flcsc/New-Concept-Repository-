@@ -17,18 +17,14 @@ class Main{
 
         // Add all existing classes to classes variable from classNames
         for(int i = 0; i < classes.length; i++){
-
             try{
-
                 classes[i] = Class.forName(classNames[i]);
             }catch(ClassNotFoundException e){
-
                 System.out.println("Cannot find class: " + classNames[i] + ".java");
                 classes[i] = null;
             } 
         }
         printClassInformation(classes);
-
         Noahs.roundScores();
     }
 
