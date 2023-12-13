@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /**
  * A representation of a Human being. Contains FIELDS
