@@ -21,6 +21,14 @@ public class Nathan
 		System.out.println("Hello Nathan");
 	}
 
+	// Increases age by 1
+	public void celebrateBirthday()
+	{
+		System.out.println("Happy birthday!");
+		this.age++;
+		System.out.println("You are now " + this.age + " years old.");
+	}
+
 	// Says "How are you" to user
 	public void howAreYou(String name)
 	{
