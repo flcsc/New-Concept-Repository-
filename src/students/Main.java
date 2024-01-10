@@ -1,4 +1,7 @@
+package students;
 import java.lang.reflect.*;
+
+import Bikes.Bicycle;
 
 class Main{
 
@@ -18,7 +21,7 @@ class Main{
         // printClassInformation(classes);
     }
 
-    private static Class<?>[] getClasses(String[] classNames)
+    private static void getClasses(String[] classNames)
     {
         classNames = sortAlphabetically(classNames);
         var classes = new Class<?>[classNames.length];

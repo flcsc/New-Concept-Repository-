@@ -1,3 +1,4 @@
+package students;
 public class GavinCreator {
     
     public static void main(String[] args) {

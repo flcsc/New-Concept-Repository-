@@ -1,3 +1,4 @@
+package students;
 public class Nathan
 {
 	// Instance variables (fields)

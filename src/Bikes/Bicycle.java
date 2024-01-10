@@ -1,3 +1,4 @@
+package Bikes;
 /**
  * The Bicycle class represents a Bicycle as it is in real-life.
  */

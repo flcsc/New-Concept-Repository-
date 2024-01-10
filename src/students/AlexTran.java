@@ -1,4 +1,5 @@
-class AlexTran
+package students;
+public class AlexTran
 {
     public static void AlexTranMethod()
     {

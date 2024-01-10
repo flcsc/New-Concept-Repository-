@@ -1,3 +1,4 @@
+package Entity;
 public class Entity {
     public int health;
     private float mass;

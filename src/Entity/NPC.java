@@ -1,3 +1,4 @@
+package Entity;
 public class NPC extends Entity{
     private String dialogue;
     float spawnX, spawnY;

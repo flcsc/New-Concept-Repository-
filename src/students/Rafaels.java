@@ -1,3 +1,4 @@
+package students;
 public class Rafaels 
 {
   public static void sayHiToRaf()

@@ -1,6 +1,4 @@
 package Bikes;
-import Bikes.Bike;
-import Bikes.Motorbike;
 
 public class BikeTest {
     public static void main(String[] args) {

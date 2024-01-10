@@ -1,3 +1,4 @@
+package students;
 import java.util.Scanner;
 public class Emmanueli
 {

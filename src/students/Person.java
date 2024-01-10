@@ -1,3 +1,4 @@
+package students;
 
 /**
  * A representation of a Human being. Contains FIELDS
