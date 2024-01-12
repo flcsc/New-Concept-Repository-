@@ -15,12 +15,10 @@ public class RenderPanel extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         // Update time variables
-        frameTime = (System.nanoTime() - previousTime) / 1000000.0f;
-        previousTime = System.nanoTime();
-
-        
-        g.setColor(Color.green);
+        frameTime = (System.currentTimeMillis() - previousTime);
+        previousTime = System.currentTimeMillis();
         for (Box box : GameUpdateLoop.entities) {
+        	g.setColor(box.color);
             g.fillRect((int)box.position.x, (int)box.position.y, box.width, box.height);
         }
         g.setColor(Color.red);

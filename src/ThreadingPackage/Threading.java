@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class Threading {
     public static void main(String[] args) {
         // Variables
-        final boolean useThreading = false;
+        final boolean useThreading = true;
         final int width = 800;
         final int height = 600;
         JFrame frame = new JFrame("Threading");
@@ -20,14 +20,16 @@ public class Threading {
         Thread gameThread = new Thread(gameLoop);
         // Begin loop
         if (useThreading) {
+        	// Starts a separate thread for game updates
             gameThread.start();
-            while (gameThread.isAlive() || frame.isActive()) {
+            // Reiterates as long as the JFrame is open
+            while (frame.isActive()) {
                 renderPanel.repaint();
             }
-            if (gameThread.isAlive()) gameLoop.isRunning = false;
-            gameThread.interrupt();
+            // Sets the loop condition of the gameLoop's run() method to false. Ends the thread
+            gameLoop.isRunning = false;
         } else {
-            while (frame.isShowing()) {
+            while (frame.isActive()) {
                 renderPanel.repaint();
                 gameLoop.tick();
             }
